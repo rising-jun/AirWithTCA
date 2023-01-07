@@ -6,12 +6,13 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 @main
 struct TodayAirApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(store: Store(initialState: WeatherViewState(), reducer: weatherReducer, environment: WeatherEnvironment(weatherService: WeatherService(), weatherConverter: WeatherConverter())))
         }
     }
 }

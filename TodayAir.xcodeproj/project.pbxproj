@@ -14,6 +14,11 @@
 		721A6A702956CF8300090110 /* TodayAirTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721A6A6F2956CF8300090110 /* TodayAirTests.swift */; };
 		721A6A7A2956CF8300090110 /* TodayAirUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721A6A792956CF8300090110 /* TodayAirUITests.swift */; };
 		721A6A7C2956CF8300090110 /* TodayAirUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721A6A7B2956CF8300090110 /* TodayAirUITestsLaunchTests.swift */; };
+		721A6A8A2956D5D600090110 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 721A6A892956D5D600090110 /* ComposableArchitecture */; };
+		721A6A8C2956D5D600090110 /* Dependencies in Frameworks */ = {isa = PBXBuildFile; productRef = 721A6A8B2956D5D600090110 /* Dependencies */; };
+		721A6A8F2956E4E600090110 /* WeatherRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721A6A8E2956E4E600090110 /* WeatherRepository.swift */; };
+		721A6A922956EF3300090110 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721A6A912956EF3300090110 /* WeatherModel.swift */; };
+		721A6A962956F37100090110 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721A6A952956F37100090110 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +49,10 @@
 		721A6A752956CF8300090110 /* TodayAirUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TodayAirUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		721A6A792956CF8300090110 /* TodayAirUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayAirUITests.swift; sourceTree = "<group>"; };
 		721A6A7B2956CF8300090110 /* TodayAirUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayAirUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		721A6A8E2956E4E600090110 /* WeatherRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRepository.swift; sourceTree = "<group>"; };
+		721A6A912956EF3300090110 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		721A6A932956F16E00090110 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		721A6A952956F37100090110 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +60,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				721A6A8A2956D5D600090110 /* ComposableArchitecture in Frameworks */,
+				721A6A8C2956D5D600090110 /* Dependencies in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +105,10 @@
 		721A6A5D2956CF7F00090110 /* TodayAir */ = {
 			isa = PBXGroup;
 			children = (
+				721A6A942956F33B00090110 /* location */,
+				721A6A932956F16E00090110 /* Info.plist */,
+				721A6A902956EF2A00090110 /* model */,
+				721A6A8D2956E4D600090110 /* network */,
 				721A6A5E2956CF7F00090110 /* TodayAirApp.swift */,
 				721A6A602956CF7F00090110 /* ContentView.swift */,
 				721A6A622956CF8300090110 /* Assets.xcassets */,
@@ -127,6 +142,30 @@
 			path = TodayAirUITests;
 			sourceTree = "<group>";
 		};
+		721A6A8D2956E4D600090110 /* network */ = {
+			isa = PBXGroup;
+			children = (
+				721A6A8E2956E4E600090110 /* WeatherRepository.swift */,
+			);
+			path = network;
+			sourceTree = "<group>";
+		};
+		721A6A902956EF2A00090110 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				721A6A912956EF3300090110 /* WeatherModel.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		721A6A942956F33B00090110 /* location */ = {
+			isa = PBXGroup;
+			children = (
+				721A6A952956F37100090110 /* LocationManager.swift */,
+			);
+			path = location;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +182,10 @@
 			dependencies = (
 			);
 			name = TodayAir;
+			packageProductDependencies = (
+				721A6A892956D5D600090110 /* ComposableArchitecture */,
+				721A6A8B2956D5D600090110 /* Dependencies */,
+			);
 			productName = TodayAir;
 			productReference = 721A6A5B2956CF7F00090110 /* TodayAir.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +258,9 @@
 				Base,
 			);
 			mainGroup = 721A6A522956CF7F00090110;
+			packageReferences = (
+				721A6A882956D5D600090110 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = 721A6A5C2956CF7F00090110 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -257,7 +303,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				721A6A8F2956E4E600090110 /* WeatherRepository.swift in Sources */,
 				721A6A612956CF7F00090110 /* ContentView.swift in Sources */,
+				721A6A962956F37100090110 /* LocationManager.swift in Sources */,
+				721A6A922956EF3300090110 /* WeatherModel.swift in Sources */,
 				721A6A5F2956CF7F00090110 /* TodayAirApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -420,6 +469,7 @@
 				DEVELOPMENT_TEAM = LHMNAPQ6N7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TodayAir/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -449,6 +499,7 @@
 				DEVELOPMENT_TEAM = LHMNAPQ6N7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TodayAir/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -583,6 +634,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		721A6A882956D5D600090110 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		721A6A892956D5D600090110 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 721A6A882956D5D600090110 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+		721A6A8B2956D5D600090110 /* Dependencies */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 721A6A882956D5D600090110 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = Dependencies;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 721A6A532956CF7F00090110 /* Project object */;
 }
