@@ -21,7 +21,7 @@ struct Body: Codable {
     let pageNo, numOfRows: Int
 }
 
-struct WeatherDTO: Codable {
+struct WeatherDTO: Codable, Equatable {
     let so2Grade: String?
     let khaiValue, so2Value, coValue: String?
     let o3Grade, pm10Value, khaiGrade, pm25Value: String?

@@ -31,7 +31,9 @@ final class WeatherService {
             }
             
             let task = URLSession.shared.dataTask(with: url) { data, response, error in
-                if let error = error { return continuation.resume(returning: .failure(.taskStatus)) }
+                if let error = error {
+                    print("error \(error)")
+                    return continuation.resume(returning: .failure(.taskStatus)) }
                 guard let data = data else { return continuation.resume(returning: .failure(.nilData)) }
                 guard let dto = try? JSONDecoder().decode(WeatherModel.self, from: data) else { return continuation.resume(returning: .failure(.parsing)) }
                 guard let weatherDTO = dto.response.body.items.first else { return continuation.resume(returning: .failure(.nilData))}
